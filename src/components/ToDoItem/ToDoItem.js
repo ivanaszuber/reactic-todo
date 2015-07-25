@@ -41,10 +41,8 @@ class ToDoItem extends React.Component {
         return (
             <li
                 className={cx({
-          'completed': todo.complete,
-          'editing': this.state.isEditing,
-          'dd-item': true,
-          'dd3-item': true
+          'strike': todo.complete,
+          'editing': this.state.isEditing
         })}
                 key={todo.id}>
                 <div className="dd-handle">
@@ -57,14 +55,17 @@ class ToDoItem extends React.Component {
                     <label onDoubleClick={this._onDoubleClick}>
                         {todo.text}
                     </label>
-                    <button className="destroy" onClick={this._onDestroyClick}/>
+                    <span className="pull-right">
+                        <button className="btn-round" onClick={this._onDestroyClick}>
+                            <i className="md md-delete"/>
+                        </button>
+                    </span>
                 </div>
                 {input}
             </li>
         );
 
     }
-
 
 
     _onToggleComplete() {

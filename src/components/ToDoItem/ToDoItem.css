@@ -1,9 +1,15 @@
+input[type="checkbox"]{
+    cursor: pointer;
+    position: absolute;
+}
+
 
 input[type="checkbox"]:focus,
 .checkbox input[type="checkbox"]:focus,
 .checkbox-inline input[type="checkbox"]:focus {
     outline: none;
 }
+
 input[type="checkbox"]:after,
 .checkbox input[type="checkbox"]:after,
 .checkbox-inline input[type="checkbox"]:after {
@@ -19,6 +25,7 @@ input[type="checkbox"]:after,
     -o-transition: 240ms;
     transition: 240ms;
 }
+
 input[type="checkbox"]:checked:before,
 .checkbox input[type="checkbox"]:checked:before,
 .checkbox-inline input[type="checkbox"]:checked:before {
@@ -37,14 +44,65 @@ input[type="checkbox"]:checked:before,
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+input[type="checkbox"]:checked:after,
+.checkbox input[type="checkbox"]:checked:after,
+.checkbox-inline input[type="checkbox"]:checked:after {
+    border: 2px solid #e91e63;
+    background-color: #e91e63;
+}
+
 input[type="checkbox"]:disabled:after,
 .checkbox input[type="checkbox"]:disabled:after,
 .checkbox-inline input[type="checkbox"]:disabled:after {
     border-color: #bbb;
 }
+
 input[type="checkbox"]:disabled:checked:after,
 .checkbox input[type="checkbox"]:disabled:checked:after,
 .checkbox-inline input[type="checkbox"]:disabled:checked:after {
     background-color: #bbb;
     border-color: transparent;
+}
+
+.btn-round {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    margin-top: 3px;
+    margin-right: 5px;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    position: relative;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.btn-round:hover {
+    background-color: #f2f2f2;
+}
+
+.pull-right, .page-header .actions {
+    float: right !important;
+}
+
+.md-delete {
+    color: #e91e63;
+}
+
+label {
+    padding-left: 50px;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.strike { text-decoration: line-through; }
+
+li {
+    margin-bottom: 10px;
 }

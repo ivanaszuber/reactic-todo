@@ -28,10 +28,6 @@ class ToDoList extends React.Component{
 
     return (
         <section className='well white'>
-          <input
-            id="toggle-all"
-            type="checkbox"
-            />
           <ul className='list-unstyled' id="todo-list">{todos}</ul>
         </section>
     );

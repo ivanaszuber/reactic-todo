@@ -18,6 +18,7 @@ class Header {
         <ToDoTextBox
           id="new-todo"
           onSave={this._onSave}
+          placeholder="Add a todo"
           />
       </header>
     );
