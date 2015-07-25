@@ -32,9 +32,9 @@ class ToDoItem extends React.Component {
         if (this.state.isEditing) {
             input =
                 <ToDoTextBox
-                    className="dd-item dd3-item edit"
                     onSave={this._onSave}
                     value={todo.text}
+                    type="checkbox"
                     />;
         }
 

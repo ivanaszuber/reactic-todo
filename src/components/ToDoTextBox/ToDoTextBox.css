@@ -1,0 +1,11 @@
+input {
+    -webkit-appearance: none;
+    -webkit-box-shadow: inset 0 -1px 0 #ddd;
+    box-shadow: inset 0 -1px 0 #ddd !important;
+}
+
+input:focus
+{
+    -webkit-box-shadow: inset 0 -2px 0 #e91e63;
+    box-shadow: inset 0 -2px 0 #e91e63 !important;
+}

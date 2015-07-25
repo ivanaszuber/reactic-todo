@@ -12,11 +12,11 @@ class Header {
 
   render() {
     return (
-      <header id="header">
-        <h1>todos</h1>
+      <header className="page-header">
+        <h1><i className="md md-camera"></i> Todo </h1>
+        <p className="lead"> What awesome things are you going to do today?. </p>
         <ToDoTextBox
           id="new-todo"
-          placeholder="What needs to be done?"
           onSave={this._onSave}
           />
       </header>
