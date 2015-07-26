@@ -1,5 +1,4 @@
 .page-header {
-  margin: 0 0 40px 0;
   padding: 0px;
   border: none;
 }
@@ -26,19 +25,13 @@
 .edit {
   position: relative;
   width: 100%;
-  font-size: 24px;
+  font-size: 18px;
   font-family: inherit;
-  line-height: 1.4em;
+  line-height: 1.8em;
   outline: none;
   background-color: #FFFFFF !important;
   color: #666;
-  -webkit-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.07), 1px 2px 5px 0 rgba(0, 0, 0, 0.06);
-  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.07), 1px 2px 5px 0 rgba(0, 0, 0, 0.06);
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 3px;
+  min-height: 10px;
 
 }
 
@@ -51,4 +44,59 @@
 
 i.md.md-camera{
   font-size: 32px;
+}
+
+#todo{
+  position: relative;
+  width: 100%;
+  outline: none;
+  background-color: #FFFFFF !important;
+  color: #666;
+  -webkit-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.07), 1px 2px 5px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.07), 1px 2px 5px 0 rgba(0, 0, 0, 0.06);
+  min-height: 40px;
+  padding: 19px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 4px 16px;
+  font-size: 13px;
+  line-height: 1.846;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  margin-left: -95px;
+  z-index: 100;
+
+}
+
+.btn-default {
+  color: #fff;
+  background-color: #e91e63;
+  border-color: #e91e63;
+  text-transform: uppercase;
+}
+.btn-default:hover, .btn-default:focus,  .btn-default:active {
+  color: #fff;
+  background-color: #e91e63;
+  border-color: #e91e63;
+  text-transform: uppercase
 }

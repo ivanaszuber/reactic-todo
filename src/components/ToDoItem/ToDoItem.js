@@ -23,6 +23,7 @@ class ToDoItem extends React.Component {
         this._onDragOver = this._onDragOver.bind(this);
         this._onDragStart = this._onDragStart.bind(this);
         this._onDoubleClick = this._onDoubleClick.bind(this);
+        this._onToggleComplete = this._onToggleComplete.bind(this);
         this._onSave = this._onSave.bind(this);
         this._onDestroyClick = this._onDestroyClick.bind(this);
         this._update = this._update.bind(this);
@@ -47,7 +48,7 @@ class ToDoItem extends React.Component {
         return (
             <li
                 className={cx({
-                  'strike': todo.complete,
+                  'completed': todo.complete,
                   'editing': this.state.isEditing
                 })}
                 key={todo.id}

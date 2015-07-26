@@ -6,9 +6,9 @@
   margin-bottom: 20px;
   background-color: #f0f0f0;
   border: 1px solid transparent;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 -1px 0 #ddd;
+  box-shadow: inset 0 -1px 0 #ddd !important;
 }
 
 .white {
@@ -31,4 +31,19 @@
   margin-bottom: 5px;
   line-height: 30px;
   cursor: pointer;
+}
+
+.react-tabs [role=tab][aria-selected=true]{
+  border:none;
+  border-bottom:2px solid #e91e63;
+}
+
+.react-tabs [role=tab]{
+  min-width:25%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.react-tabs [role=tablist]{
+  border-bottom: none;
 }

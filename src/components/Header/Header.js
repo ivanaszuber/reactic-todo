@@ -10,26 +10,34 @@ import ToDoTextBox from '../ToDoTextBox/ToDoTextBox';
 class Header {
 
 
-  render() {
-    return (
-      <header className="page-header">
-        <h1><i className="md md-camera"></i> Reactic </h1>
-        <p className="lead"> What awesome things are you going to do today?. </p>
-        <ToDoTextBox
-          id="new-todo"
-          onSave={this._onSave}
-          placeholder="Add a todo"
-          />
-      </header>
-    );
-  }
+    render() {
+        return (
+            <header className="page-header">
+                <h1><i className="md md-camera"></i> Reactic </h1>
 
-  _onSave(text) {
-  if (text.trim()){
-    TodoActions.createToDo(text);
-  }
+                <p className="lead"> What awesome things are you going to do today? </p>
 
-}
+                <div id="todo">
+                    <ToDoTextBox
+                        id="new-todo"
+                        onSave={this._onSave}
+                        />
+                    <span className="pull-right">
+                        <button className="btn btn-default" onClick={this._onSave}>Add ToDo
+                        </button>
+                    </span>
+                </div>
+
+            </header>
+        );
+    }
+
+    _onSave(text) {
+        if (text.trim()) {
+            TodoActions.createToDo(text);
+        }
+
+    }
 
 }
 

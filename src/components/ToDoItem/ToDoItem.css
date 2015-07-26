@@ -1,6 +1,11 @@
 input[type="checkbox"]{
     cursor: pointer;
     position: absolute;
+    box-shadow: none !important;
+}
+
+input[type="checkbox"]:checked{
+    box-shadow: none !important;
 }
 
 
@@ -8,6 +13,7 @@ input[type="checkbox"]:focus,
 .checkbox input[type="checkbox"]:focus,
 .checkbox-inline input[type="checkbox"]:focus {
     outline: none;
+    box-shadow: none !important;
 }
 
 input[type="checkbox"]:after,
@@ -101,7 +107,10 @@ label {
     font-size: 14px;
 }
 
-.strike { text-decoration: line-through; }
+li.completed label {
+    color: #a9a9a9;
+    text-decoration: line-through;
+}
 
 li {
     margin-bottom: 10px;
@@ -133,23 +142,18 @@ li .edit {
 .edit {
     position: relative;
     margin: 0;
+    border:none;
     width: 100%;
     font-size: 24px;
     font-family: inherit;
     line-height: 1.4em;
-    border: 0;
-    outline: none;
-    color: inherit;
     padding: 6px;
-    border: 1px solid #999;
-    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -ms-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+}
+
+i.md.md-delete {
+    font-size: 18px;
+}
+
+.toggle{
+    box-shadow: none !important;
 }
