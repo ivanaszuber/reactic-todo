@@ -12,13 +12,14 @@
 
 .page-header h1{
   color:#e91e63;
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .lead {
   font-size: 14px;
   color: #9B9B9B;
   margin-bottom: 25px;
+  font-style: italic;
 }
 
 #new-todo,
@@ -46,4 +47,8 @@
   background: rgba(0, 0, 0, 0.02);
   z-index: 2;
   box-shadow: none;
+}
+
+i.md.md-camera{
+  font-size: 32px;
 }

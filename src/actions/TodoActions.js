@@ -7,45 +7,47 @@ import TodoConstants from '../constants/TodoConstants';
 
 export default {
 
-  createToDo(text) {
-    ToDoDispatcher.dispatch({
-      actionType: TodoConstants.TODO_CREATE,
-      text: text
-    });
-  },
+    createToDo(text) {
+        ToDoDispatcher.dispatch({
+            actionType: TodoConstants.TODO_CREATE,
+            text: text,
+            parent_id: 0,
+            children: []
+        });
+    },
 
-  updateToDoText(id, text) {
-    ToDoDispatcher.dispatch({
-      actionType: TodoConstants.TODO_UPDATE_TEXT,
-      id: id,
-      text: text
-    });
-  },
+    updateToDoText(id, text) {
+        ToDoDispatcher.dispatch({
+            actionType: TodoConstants.TODO_UPDATE_TEXT,
+            id: id,
+            text: text
+        });
+    },
 
-  toggleToDoComplete(todo) {
-    var id = todo.id;
-    var actionType = todo.complete ?
-        TodoConstants.TODO_UNDO_COMPLETE :
-        TodoConstants.TODO_COMPLETE;
+    toggleToDoComplete(todo) {
+        var id = todo.id;
+        var actionType = todo.complete ?
+            TodoConstants.TODO_UNDO_COMPLETE :
+            TodoConstants.TODO_COMPLETE;
 
-    ToDoDispatcher.dispatch({
-      actionType: actionType,
-      id: id
-    });
-  },
+        ToDoDispatcher.dispatch({
+            actionType: actionType,
+            id: id
+        });
+    },
 
-  deleteToDo(id) {
-    ToDoDispatcher.dispatch({
-      actionType: TodoConstants.TODO_DESTROY,
-      id: id
-    });
-  },
+    deleteToDo(id) {
+        ToDoDispatcher.dispatch({
+            actionType: TodoConstants.TODO_DESTROY,
+            id: id
+        });
+    },
 
-  deleteCompletedToDos() {
-    ToDoDispatcher.dispatch({
-      actionType: TodoConstants.TODO_DESTROY_COMPLETED
-    });
-  }
+    deleteCompletedToDos() {
+        ToDoDispatcher.dispatch({
+            actionType: TodoConstants.TODO_DESTROY_COMPLETED
+        });
+    }
 
 };
 

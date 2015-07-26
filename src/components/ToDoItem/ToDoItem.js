@@ -8,6 +8,7 @@ import ToDoActions from '../../actions/ToDoActions';
 import ToDoTextBox from '../ToDoTextBox/ToDoTextBox';
 import cx from'react/lib/cx';
 import ToDoList from '../ToDoList/ToDoList'
+import ToDoStore from '../../stores/ToDoStore'
 
 class ToDoItem extends React.Component {
 
@@ -18,10 +19,14 @@ class ToDoItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {isEditing: false};
-        this._onToggleComplete = this._onToggleComplete.bind(this);
+        this._onDragEnd = this._onDragEnd.bind(this);
+        this._onDragOver = this._onDragOver.bind(this);
+        this._onDragStart = this._onDragStart.bind(this);
         this._onDoubleClick = this._onDoubleClick.bind(this);
         this._onSave = this._onSave.bind(this);
         this._onDestroyClick = this._onDestroyClick.bind(this);
+        this._update = this._update.bind(this);
+        this._sort = this._sort.bind(this);
     }
 
     render() {
@@ -32,6 +37,7 @@ class ToDoItem extends React.Component {
         if (this.state.isEditing) {
             input =
                 <ToDoTextBox
+                    className="edit"
                     onSave={this._onSave}
                     value={todo.text}
                     type="checkbox"
@@ -41,11 +47,17 @@ class ToDoItem extends React.Component {
         return (
             <li
                 className={cx({
-          'strike': todo.complete,
-          'editing': this.state.isEditing
-        })}
-                key={todo.id}>
-                <div className="dd-handle">
+                  'strike': todo.complete,
+                  'editing': this.state.isEditing
+                })}
+                key={todo.id}
+                data-id={todo.position}
+                data-key = {todo.id}
+                draggable = "true"
+                onDragEnd={this._onDragEnd}
+                onDragOver={this._onDragOver}
+                onDragStart={this._onDragStart}>
+                <div>
                     <input
                         className="toggle"
                         type="checkbox"
@@ -67,9 +79,32 @@ class ToDoItem extends React.Component {
 
     }
 
-
     _onToggleComplete() {
-        ToDoActions.toggleComplete(this.props.todo);
+        ToDoActions.toggleToDoComplete(this.props.todo);
+    }
+
+    _update(to) {
+        ToDoStore.update(to)
+    }
+
+    _sort(to, placement) {
+
+        ToDoStore.sort(to, this.props.todo.id, placement)
+    }
+
+    _onDragStart(e) {
+
+        ToDoStore.sortStart(e, this.props.todo.id)
+    }
+
+    _onDragEnd() {
+
+        ToDoStore.sortEnd()
+    }
+
+    _onDragOver(e) {
+
+        ToDoStore.dragOver(e, this.props.todo.id)
     }
 
     _onDoubleClick() {

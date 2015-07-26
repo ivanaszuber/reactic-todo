@@ -64,6 +64,10 @@ var config = {
         loader: 'style-loader!css-loader!' + AUTOPREFIXER_LOADER
       },
       {
+        test: /\.scss$/,
+        loader: 'style-loader!css-loader!' + AUTOPREFIXER_LOADER
+      },
+      {
         test: /\.less$/,
         loader: 'style-loader!css-loader!' + AUTOPREFIXER_LOADER +
                 '!less-loader'

@@ -13,7 +13,7 @@ class Header {
   render() {
     return (
       <header className="page-header">
-        <h1><i className="md md-camera"></i> Todo </h1>
+        <h1><i className="md md-camera"></i> Reactic </h1>
         <p className="lead"> What awesome things are you going to do today?. </p>
         <ToDoTextBox
           id="new-todo"
